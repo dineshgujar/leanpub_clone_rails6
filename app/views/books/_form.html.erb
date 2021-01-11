@@ -1,0 +1,67 @@
+<%= form_with(model: book, local: true) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+        <% book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author_price %>
+    <%= form.text_field :author_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :selling_price %>
+    <%= form.text_field :selling_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_index %>
+    <%= form.text_area :book_index %>
+  </div>
+
+  <div class="field">
+    <%= form.label :about %>
+    <%= form.text_area :about %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_category %>
+    <%= form.text_field :book_category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :youtube_link %>
+    <%= form.text_field :youtube_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :retired %>
+    <%= form.check_box :retired %>
+  </div>
+
+  <div class="field">
+    <%= form.label :published %>
+    <%= form.check_box :published %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
